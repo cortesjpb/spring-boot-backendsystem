@@ -1,14 +1,11 @@
 package com.benjacortes.backendsystem.data;
 
+import org.springframework.data.annotation.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
-@Entity
 public class ToDo {
     
     @Id
-    private Integer id;
+    private String id;
 
     private String title;
 
@@ -19,7 +16,7 @@ public class ToDo {
         this.completed = completed;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
