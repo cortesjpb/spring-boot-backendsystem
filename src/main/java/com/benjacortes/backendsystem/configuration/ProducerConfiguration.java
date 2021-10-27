@@ -14,7 +14,7 @@ import org.springframework.kafka.core.ProducerFactory;
 @Configuration
 public class ProducerConfiguration {
 
-    private static final String KAFKA_BROKER = "localhost:9092";
+    private static final String KAFKA_BROKER = "localhost:9093,localhost:9094,localhost:9095";
 
     @Bean
     public ProducerFactory<String, String> producerFactory() {
