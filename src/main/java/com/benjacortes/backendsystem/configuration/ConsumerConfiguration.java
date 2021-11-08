@@ -14,7 +14,7 @@ import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 @Configuration
 public class ConsumerConfiguration {
 
-    private static final String KAFKA_BROKER = "localhost:9093,localhost:9094,localhost:9095";
+    private static final String KAFKA_BROKER = "kafka1:9092,kafka2:9092,kafka3:9092";
     private static final String GROUP_ID = "kafka-sandbox";
 
     @Bean
