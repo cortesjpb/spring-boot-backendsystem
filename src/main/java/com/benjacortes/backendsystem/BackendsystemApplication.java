@@ -1,8 +1,5 @@
 package com.benjacortes.backendsystem;
 
-import java.util.Map;
-
-
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
