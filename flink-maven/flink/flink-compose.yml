@@ -1,0 +1,28 @@
+version: "3"
+services:
+  jobmanager:
+    # image: flink:scala_2.12-java11
+    image: flink_maven_new
+    ports:
+      - "8081:8081"
+    command: jobmanager
+    volumes:
+      - /home/a310726/flink-maven/flink/target/dependency:/opt/flink/usrlib
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: jobmanager        
+  taskmanager:
+    # image: flink:scala_2.12-java11
+    image: flink_maven_new
+    depends_on:
+      - jobmanager
+    command: taskmanager
+    volumes:
+      - /home/a310726/flink-maven/flink/target/dependency:/opt/flink/usrlib
+    scale: 1
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: jobmanager
+        taskmanager.numberOfTaskSlots: 2

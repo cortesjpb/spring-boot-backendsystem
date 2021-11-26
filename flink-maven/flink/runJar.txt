@@ -1,0 +1,7 @@
+JOB_CLASS_NAME="com.benjacortes.App"
+JM_CONTAINER=$(docker ps --filter name=jobmanager --format={{.ID}})
+TM_CONTAINER=$(docker ps --filter name=taskmanager --format={{.ID}})
+docker cp /home/a310726/flink-maven/flink/target/flink-1.jar "${JM_CONTAINER}":/job.jar
+docker exec -t -i "${JM_CONTAINER}" bash
+
+flink run -c com.benjacortes.App /job.jar
